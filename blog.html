@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ব্লগ - টেকিটক</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>টেকিটক</h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">হোম</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link active">ব্লগ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">আমার সম্পর্কে</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <div class="container">
+            <h1>সকল ব্লগ পোস্ট</h1>
+            <p>প্রযুক্তি, এআই এবং ডেটা বিশ্লেষণ নিয়ে লিখিত আর্টিকেল</p>
+        </div>
+    </section>
+
+    <!-- Blog Search and Filters -->
+    <section class="blog-filters">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchInput" placeholder="ব্লগ পোস্ট খুঁজুন..." class="search-input">
+                    <button class="search-btn" onclick="searchPosts()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">সব</button>
+                <button class="filter-btn" data-category="এআই">এআই</button>
+                <button class="filter-btn" data-category="ডেটা বিশ্লেষণ">ডেটা বিশ্লেষণ</button>
+                <button class="filter-btn" data-category="প্রযুক্তি">প্রযুক্তি</button>
+                <button class="filter-btn" data-category="মেশিন লার্নিং">মেশিন লার্নিং</button>
+                <button class="filter-btn" data-category="প্রোগ্রামিং">প্রোগ্রামিং</button>
+                <button class="filter-btn" data-category="বিগ ডেটা">বিগ ডেটা</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-posts">
+        <div class="container">
+            <div class="posts-stats">
+                <span id="postCount">মোট ৬টি পোস্ট</span>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="posts-grid" id="postsGrid">
+                <div class="post-card" data-category="এআই" data-title="কৃত্রিম বুদ্ধিমত্তা: ভবিষ্যতের প্রযুক্তি">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="AI Technology">
+
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">১৫ জানুয়ারি, ২০২৪</span>
+                            <span class="post-category">এআই</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> ৫ মিনিট পড়া</span>
+                        </div>
+                        <h3>কৃত্রিম বুদ্ধিমত্তা: ভবিষ্যতের প্রযুক্তি</h3>
+                        <p>আজকের বিশ্বে এআই কিভাবে আমাদের জীবন পরিবর্তন করছে এবং ভবিষ্যতে এর সম্ভাবনা নিয়ে আলোচনা। মেশিন লার্নিং, ডিপ লার্নিং এবং নিউরাল নেটওয়ার্কের মাধ্যমে কিভাবে কম্পিউটার মানুষের মতো চিন্তা করতে শিখছে...</p>
+                        <div class="post-footer">
+                            <div class="post-tags">
+                                <span class="tag">এআই</span>
+                                <span class="tag">মেশিন লার্নিং</span>
+                                <span class="tag">ভবিষ্যত</span>
+                            </div>
+                            <button class="read-more" onclick="openBlogModal('ai-future')">সম্পূর্ণ পড়ুন</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-card" data-category="ডেটা বিশ্লেষণ" data-title="ডেটা বিশ্লেষণের গুরুত্ব">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Data Analysis">
+
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">১২ জানুয়ারি, ২০২৪</span>
+                            <span class="post-category">ডেটা বিশ্লেষণ</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> ৭ মিনিট পড়া</span>
+                        </div>
+                        <h3>ডেটা বিশ্লেষণের গুরুত্ব</h3>
+                        <p>ব্যবসায়িক সিদ্ধান্ত গ্রহণে ডেটা বিশ্লেষণের ভূমিকা এবং এর কার্যকর ব্যবহার। কিভাবে বড় ডেটা থেকে অর্থপূর্ণ তথ্য বের করা যায় এবং তা ব্যবসায়িক কৌশল নির্ধারণে ব্যবহার করা যায়...</p>
+                        <div class="post-footer">
+                            <div class="post-tags">
+                                <span class="tag">ডেটা</span>
+                                <span class="tag">বিশ্লেষণ</span>
+                                <span class="tag">ব্যবসা</span>
+                            </div>
+                            <button class="read-more" onclick="openBlogModal('data-analysis')">সম্পূর্ণ পড়ুন</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-card" data-category="প্রযুক্তি" data-title="আধুনিক প্রযুক্তির প্রবণতা">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Technology">
+
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">১০ জানুয়ারি, ২০২৪</span>
+                            <span class="post-category">প্রযুক্তি</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> ৬ মিনিট পড়া</span>
+                        </div>
+                        <h3>আধুনিক প্রযুক্তির প্রবণতা</h3>
+                        <p>২০২৪ সালে প্রযুক্তি জগতের সর্বশেষ প্রবণতা এবং উদ্ভাবন নিয়ে বিশ্লেষণ। ক্লাউড কম্পিউটিং, আইওটি, ব্লকচেইন এবং অন্যান্য নতুন প্রযুক্তি কিভাবে আমাদের ভবিষ্যত গঠন করবে...</p>
+                        <div class="post-footer">
+                            <div class="post-tags">
+                                <span class="tag">প্রযুক্তি</span>
+                                <span class="tag">ট্রেন্ড</span>
+                                <span class="tag">২০২৪</span>
+                            </div>
+                            <button class="read-more" onclick="openBlogModal('tech-trends')">সম্পূর্ণ পড়ুন</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-card" data-category="মেশিন লার্নিং" data-title="মেশিন লার্নিং: প্রাথমিক ধারণা">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Machine Learning">
+
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">৮ জানুয়ারি, ২০২৪</span>
+                            <span class="post-category">মেশিন লার্নিং</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> ৮ মিনিট পড়া</span>
+                        </div>
+                        <h3>মেশিন লার্নিং: প্রাথমিক ধারণা</h3>
+                        <p>মেশিন লার্নিং কি এবং কিভাবে এটি কাজ করে। সুপারভাইজড লার্নিং, আনসুপারভাইজড লার্নিং এবং রিইনফোর্সমেন্ট লার্নিং নিয়ে বিস্তারিত আলোচনা...</p>
+                        <div class="post-footer">
+                            <div class="post-tags">
+                                <span class="tag">মেশিন লার্নিং</span>
+                                <span class="tag">এআই</span>
+                                <span class="tag">প্রাথমিক</span>
+                            </div>
+                            <button class="read-more" onclick="openBlogModal('machine-learning')">সম্পূর্ণ পড়ুন</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-card" data-category="প্রোগ্রামিং" data-title="পাইথন দিয়ে ডেটা বিশ্লেষণ">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Python Programming">
+
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">৫ জানুয়ারি, ২০২৪</span>
+                            <span class="post-category">প্রোগ্রামিং</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> ১০ মিনিট পড়া</span>
+                        </div>
+                        <h3>পাইথন দিয়ে ডেটা বিশ্লেষণ</h3>
+                        <p>পাইথন প্রোগ্রামিং ভাষা ব্যবহার করে কিভাবে ডেটা বিশ্লেষণ করা যায়। প্যান্ডাস, নামপাই এবং ম্যাটপ্লটলিব লাইব্রেরি ব্যবহার করে ডেটা ভিজ্যুয়ালাইজেশন...</p>
+                        <div class="post-footer">
+                            <div class="post-tags">
+                                <span class="tag">পাইথন</span>
+                                <span class="tag">ডেটা</span>
+                                <span class="tag">প্রোগ্রামিং</span>
+                            </div>
+                            <button class="read-more" onclick="openBlogModal('python-data')">সম্পূর্ণ পড়ুন</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-card" data-category="বিগ ডেটা" data-title="বিগ ডেটা এবং এর চ্যালেঞ্জ">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Big Data">
+
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">৩ জানুয়ারি, ২০২৪</span>
+                            <span class="post-category">বিগ ডেটা</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> ৯ মিনিট পড়া</span>
+                        </div>
+                        <h3>বিগ ডেটা এবং এর চ্যালেঞ্জ</h3>
+                        <p>বিগ ডেটা কি এবং কেন এটি গুরুত্বপূর্ণ। ভলিউম, ভেলোসিটি এবং ভ্যারাইটি - বিগ ডেটার তিনটি ভি নিয়ে আলোচনা এবং এর প্রক্রিয়াকরণের চ্যালেঞ্জ...</p>
+                        <div class="post-footer">
+                            <div class="post-tags">
+                                <span class="tag">বিগ ডেটা</span>
+                                <span class="tag">চ্যালেঞ্জ</span>
+                                <span class="tag">প্রক্রিয়াকরণ</span>
+                            </div>
+                            <button class="read-more" onclick="openBlogModal('big-data')">সম্পূর্ণ পড়ুন</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Modal -->
+    <div id="blogModal" class="modal">
+        <div class="modal-content">
+            <div class="close"></div>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>টেকিটক</h3>
+                    <p>প্রযুক্তি, এআই এবং ডেটা বিশ্লেষণে আপনার বিশ্বস্ত সঙ্গী</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>দ্রুত লিংক</h4>
+                    <ul class="quick-links">
+                        <li><a href="index.html">হোম</a></li>
+                        <li><a href="blog.html">ব্লগ</a></li>
+                        <li><a href="about.html">আমার সম্পর্কে</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>যোগাযোগ</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> themarufkhan.data@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> ০১৮১৩০০৮৬০৪</p>
+                        <p><i class="fas fa-map-marker-alt"></i> ঢাকা, বাংলাদেশ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; ২০২৪ টেকিটক। সর্বস্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
